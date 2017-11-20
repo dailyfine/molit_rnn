@@ -20,6 +20,7 @@ n_input = feature_number
 n_mini_batch_size = 25
 n_decoder_input_feature = 10
 
+
 # length returns lenX such that
 # lenX[idx_specifies_batch] = the true length of times_steps
 # i.e., maxlength - zero vectors which is filled in a make_batch method.
@@ -87,10 +88,15 @@ with tf.device('/device:cpu:0'):
     encoder_result_tf = tf.stack(encoder_result)
     cost_ = tf.stack(encoder_cost_list)
     cost_result = tf.reduce_mean(cost_)
+    tf.summary.scalar('/loss', cost_result)
     optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost_result)
+
     # run the session to calculate the result.
 
 sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True))
+merged = tf.summary.merge_all()
+train_writer = tf.summary.FileWriter('result/hstrain', sess.graph)
+test_writer = tf.summary.FileWriter('result/hstest', sess.graph)
 sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()
 
@@ -128,13 +134,16 @@ if Training_flag:
 
         lenX = encoder_length_vec[shuffled_batch_idx][:n_mini_batch_size]
         np_lenX = np.asarray(lenX) #.reshape(n_mini_batch_size,1)
-        _, loss = sess.run([optimizer, cost_result],
+        _, loss, summary = sess.run([optimizer, cost_result, merged],
                            feed_dict={X: encoder_input_batch[shuffled_batch_idx][:n_mini_batch_size]
                                ,Y: encoder_target_batch[shuffled_batch_idx][:n_mini_batch_size]
                                ,lenXpl: np_lenX
                              }
                            )
         print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.6f}'.format(loss))
+        train_writer.add_summary(summary, epoch)
+
+
     print('Optimization Complete!')
     s = saving_path = saver.save(sess, model_path)
     print('model saving completed!')
