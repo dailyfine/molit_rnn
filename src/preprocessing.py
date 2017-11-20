@@ -4,20 +4,17 @@ import pandas as pd
 import numpy as np
 import functools
 
-max_time_index = 700
+max_time_index = 50
 batch_size = 0
 
-molit_start_time = '201201'
+molit_start_time = '201601'
 molit_end_time = '201704'
-
 
 def conjunction(*conditions):
     return functools.reduce(np.logical_and, conditions)
 
-
 def disjunction(*conditions):
     return functools.reduce(np.logical_or, conditions)
-
 
 def molit_timecode_generator(start_code, end_code):
     result_timecode = []
@@ -71,7 +68,6 @@ def sequence_generator(auction_time_code = '201612'):
 
     # Dealing with nan
     # STEP1) remove columns with high probability of nan.
-
     data_ggi = data_ggi.drop('유치권여부', 1)
     data_ggi = data_ggi.drop('법정지상권여부', 1)
     data_ggi = data_ggi.drop('지분여부', 1)
@@ -79,57 +75,43 @@ def sequence_generator(auction_time_code = '201612'):
 
     # STEP2) Filling NA which is not that important.
 
-    data_ggi['전용면적'].fillna(40)
-    data_ggi['건물면적'].fillna(80)
+    data_ggi['전용면적'].fillna(81)
+    data_ggi['대지면적'].fillna(44)
     data_ggi['층'].fillna(1)
 
     # STEP3) If very important information is nan, then we will ignore that record.
     data_ggi = data_ggi.dropna(axis=0)
-
-    data_ggi['위도'] = (data_ggi['위도'] - 37) * 10
-    data_ggi['경도'] = (data_ggi['경도'] - 128) * 10
-    data_ggi['감정년도'] = (data_ggi['감정년도'] - 2000) * 12
-    data_ggi['낙찰년도'] = (data_ggi['낙찰년도'] - 2000) * 12
-    data_ggi['전체감정가'] = data_ggi['전체감정가'] * 0.000001
-    data_ggi['낙찰가'] = data_ggi['낙찰가'] * 0.000001
-
     encoder_batch = []
     decoder_batch = []
 
-    for idx in range(data_ggi.shape[0]): #나중에 이렇게 고쳐야함
+    for idx in range (2):         #(data_ggi.shape[0]): #나중에 이렇게 고쳐야함
         province = data_ggi.iloc[idx]['시도']
         city = data_ggi.iloc[idx]['시구군']
         village = data_ggi.iloc[idx]['읍면동']
         number = data_ggi.iloc[idx]['지번']
         name = data_ggi.iloc[idx]['아파트명']
-        result = pd.DataFrame()
+        size = data_ggi.iloc[idx]['전용면적']
 
-        for item in molit_timecode_generator(molit_start_time, auction_time_code):
+        result = pd.DataFrame()
+        for item in molit_timecode_generator(molit_start_time, molit_end_time):
             # for item in molit_timecode_generator('201101', auction_time_code):
             # 이게 더 효율일지는 나중에 체크해 보도록 하자.
             data_molit = pd.read_csv('data_files/molit/' + item)
             c1 = data_molit['시도'] == province
             c2 = data_molit['시구군'] == city
-            c3 = data_molit['법정동'] == village
+            c3 = data_molit['읍면동'] == village
             c4 = data_molit['지번'] == number
             c5 = data_molit['아파트명'] == name
-
-            data_filtered = pd.DataFrame(data_molit[conjunction(c1, c2, c3, disjunction(c4, c5))])
-
-            data_filtered['위도'] = (data_filtered['위도'] - 37) * 10
-            data_filtered['경도'] = (data_filtered['경도'] - 128) * 10
-            data_filtered['거래년도'] = (data_filtered['거래년도'] - 2000) * 12
-            data_filtered['건축년도'] = (data_filtered['건축년도'] - 2000) * 12
-            data_filtered['거래금액'] = data_filtered['거래금액'] * 0.000001
+            c6 = data_molit['전용면적'] < (size + 10)
+            c7 = data_molit['전용면적'] > (size - 10)
 
             # 레코드가 시/도/동 까지 같은 경우 지번이나 아프명 중에 어느 하나라도 일치하면 같은 매물로 여긴다.
+            data_filtered = pd.DataFrame(data_molit[conjunction(c1, c2, c3, disjunction(c4, c5), c6 ,c7)])
             result = result.append(data_filtered)
-        # '아파트명' 을 dictionary 에 넣어 확인할 수도 있다
 
         cleaned_encoder_batch_ = result[['위도', '경도', '거래년도', '거래월', '건축년도', '층', '전용면적', '거래금액']]
         cleaned_encoder_batch_element = cleaned_encoder_batch_.dropna(axis=0).as_matrix()
-        cleaned_decoder_batch_element = data_ggi.iloc[idx][['위도', '경도', '감정년도', '감정월',
-                                                          '전체감정가','전용면적', '건물면적', '층', '낙찰년도', '낙찰월', '낙찰가']].as_matrix()
+        cleaned_decoder_batch_element = data_ggi.iloc[idx][['위도', '경도','전용면적', '대지면적', '층', '낙찰년도', '낙찰월', '낙찰가']].as_matrix()
 
         if not result.empty:
 
@@ -163,18 +145,17 @@ def make_variable_length_batch(timecode='201612'):
 
     e, c = sequence_generator(timecode)
     c = np.asarray(c)
-
     final_encoder_input_batch = []
     final_encoder_output_batch = []
     final_decoder_input_batch = []
     final_decoder_output_batch = []
 
     for batch_idx, element_in_the_batch in enumerate(e):
-
-        encoder_input_batch = []
+        encoder_input_batch  = []
         encoder_output_batch = []
 
         for idx, item in enumerate(element_in_the_batch):
+        #  ['위도', '경도', '거래년도', '거래월', '건축년도', '층', '전용면적', '거래금액']
 
             if idx < np.shape(element_in_the_batch)[0] - 1:
                 latitude = element_in_the_batch[idx][0]
@@ -208,7 +189,7 @@ def make_variable_length_batch(timecode='201612'):
                     , predicting_apartment_size]
 
                 encoder_input_batch.append(np.asarray(input_batch_pre))
-                # encoder input 은 위도, 경도, 거래년도, 거래월, 층, 면적, 거래가격, 예측년도, 예측월, 예측 층, 예측 면적. 순이다.
+                # encoder input 은 위도, 경도, 거래년도, 거래월, 층, 면적, 거래가격, 건축년도, 예측년도, 예측월, 예측 층, 예측 면적. 순이다.
                 encoder_output_batch.append(predicting_apartment_selling_price)
 
         if len(encoder_input_batch) != 0:
