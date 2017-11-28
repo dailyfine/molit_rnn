@@ -25,18 +25,17 @@ def timecode_generator(start_code, end_code):
 
     return result_timecode
 
-t = timecode_generator('201601', '201602')
+t = timecode_generator('201610', '201611')
 
 for time_string in t:
     input_file_name = "batch_data_h5py/" + time_string + "_np"
     print("normalizing encoder_input in file ",input_file_name)
-    h5f = h5py.File('batch_data_h5py/201601_np', 'r+')
+    h5f = h5py.File(input_file_name, 'r+')
     batch_size_ = len(h5f['encoder_input_batch'][:])
     shuffled_batch_idx = np.arange(batch_size_)
     encoder_input_batch = h5f['encoder_input_batch'][:]
     encoder_length_vec = h5f['encoder_length_vector_batch'][:]
     encoder_length_vec = np.asarray(h5f['encoder_length_vector_batch'][:], dtype=np.int)
-
 
     # encoder input 은 위도, 경도, 거래년도, 거래월, 층, 면적, 거래가격, 건축년도, 예측년도, 예측월, 예측 층, 예측 면적. 순이다.
     for i in range(batch_size_):
