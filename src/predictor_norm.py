@@ -25,6 +25,30 @@ n_decoder_input_feature = 10
 # i.e., maxlength - zero vectors which is filled in a make_batch method.
 # This length info is very useful when calculating the cost removing the effect of zero vector's output.
 
+
+def timecode_generator(start_code, end_code):
+    result_timecode = []
+
+    start_YY = int(start_code[:4])
+    start_MM = int(start_code[4:])
+
+    end_YY = int(end_code[:4])
+    end_MM = int(end_code[4:])
+
+    tmp_MM = start_MM
+    tmp_YY = start_YY
+
+    while tmp_YY * 100 + tmp_MM < end_YY * 100 + end_MM:
+        temp_time = tmp_MM + tmp_YY * 100
+        result_timecode.append(str(temp_time))
+        tmp_MM = tmp_MM + 1
+
+        if tmp_MM >= 13:
+            tmp_MM = 1
+            tmp_YY = tmp_YY + 1
+
+    return result_timecode
+
 def length(sequence):
     used = tf.sign(tf.reduce_max(tf.abs(sequence), 2))
     length_ = tf.reduce_sum(used, 1)
@@ -88,11 +112,11 @@ with tf.device('/device:cpu:0'):
     cost_ = tf.stack(encoder_cost_list)
     cost_result = tf.reduce_mean(cost_)
 
-    tf.summary.scalar('/loss', cost_result)
-    tf.summary.tensor_summary('/W', W1)
+    training_loss = tf.summary.scalar('/training_loss', cost_result)
+    validation_loss = tf.summary.scalar('/validation_loss', cost_result)
 
     optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost_result)
-    merged = tf.summary.merge_all()
+   # merged = tf.summary.merge_all()
     # run the session to calculate the result.
 
 sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True))
@@ -102,45 +126,68 @@ test_writer = tf.summary.FileWriter('result/hstest', sess.graph)
 sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()
 
-if Training_flag:
+training_data = timecode_generator('201601', '201604')
+validation_data = timecode_generator('201610', '201612')
 
-    h5f = h5py.File('batch_data_h5py/201611_np', 'r')
-    batch_size_ = len(h5f['encoder_input_batch'][:])
-    shuffled_batch_idx = np.arange(batch_size_)
-    encoder_input_batch = h5f['encoder_input_batch'][:]
-    encoder_length_vec = h5f['encoder_length_vector_batch'][:]
-    encoder_length_vec = np.asarray(h5f['encoder_length_vector_batch'][:], dtype=np.int)
-    encoder_target_batch = h5f['encoder_target_batch'][:]
-    # encoder_target_batch = (h5f['encoder_target_batch'][:] - 223586273) / 122304694
-    h5f.close()
+if Training_flag:
     # encoder input 은 위도, 경도, 거래년도, 거래월, 층, 면적, 거래가격, 건축년도, 예측년도, 예측월, 예측 층, 예측 면적. 순이다.
 
     for epoch in range(n_epoch):
-        if epoch % 100 == 0 : learning_rate = learning_rate * 0.1
-        np.random.shuffle(shuffled_batch_idx)
+        # random 하게, 시간을 고른다.
+        tr_randint = np.random.randint(0, len(training_data))
+        h5f = h5py.File('batch_data_h5py/'+training_data[tr_randint]+'_np', 'r')
 
+        batch_size_ = len(h5f['encoder_input_batch'][:])
+        shuffled_batch_idx = np.arange(batch_size_)
+        encoder_input_batch = h5f['encoder_input_batch'][:]
+        encoder_length_vec = h5f['encoder_length_vector_batch'][:]
+        encoder_length_vec = np.asarray(h5f['encoder_length_vector_batch'][:], dtype=np.int)
+        encoder_target_batch = h5f['encoder_target_batch'][:]
+        h5f.close()
+
+        np.random.shuffle(shuffled_batch_idx)
         lenX = encoder_length_vec[shuffled_batch_idx][:n_mini_batch_size]
-        np_lenX = np.asarray(lenX) #.reshape(n_mini_batch_size,1)
-        _, loss, summary = sess.run([optimizer, cost_result, merged],
+        np_lenX = np.asarray(lenX)
+        _, loss, tr_summary = sess.run([optimizer, cost_result, training_loss],
                            feed_dict={X: encoder_input_batch[shuffled_batch_idx][:n_mini_batch_size]
                                ,Y: encoder_target_batch[shuffled_batch_idx][:n_mini_batch_size]
                                ,lenXpl: np_lenX
                              }
                            )
-        print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.6f}'.format(loss))
-        train_writer.add_summary(summary, epoch)
+        print('Epoch: ', '%04d' % (epoch + 1), 'training loss =', '{:.6f}'.format(loss))
+        train_writer.add_summary(tr_summary, epoch)
 
+        # Validation ======================================================================
+        val_randint = np.random.randint(0, len(validation_data))
+        h5f = h5py.File('batch_data_h5py/'+validation_data[val_randint]+'_np', 'r')
+
+        batch_size_ = len(h5f['encoder_input_batch'][:])
+        shuffled_batch_idx = np.arange(batch_size_)
+        encoder_input_batch = h5f['encoder_input_batch'][:]
+        encoder_length_vec = h5f['encoder_length_vector_batch'][:]
+        encoder_length_vec = np.asarray(h5f['encoder_length_vector_batch'][:], dtype=np.int)
+        encoder_target_batch = h5f['encoder_target_batch'][:]
+        h5f.close()
+
+        np.random.shuffle(shuffled_batch_idx)
+        lenX = encoder_length_vec[shuffled_batch_idx][:n_mini_batch_size]
+        np_lenX = np.asarray(lenX)
+        loss, val_summary = sess.run([cost_result, validation_loss],
+                           feed_dict={X: encoder_input_batch[shuffled_batch_idx][:n_mini_batch_size]
+                               ,Y: encoder_target_batch[shuffled_batch_idx][:n_mini_batch_size]
+                               ,lenXpl: np_lenX
+                             }
+                           )
+        print('Epoch:', '%04d' % (epoch + 1), 'validation loss =', '{:.6f}'.format(loss))
+        train_writer.add_summary(val_summary, epoch)
 
     print('Optimization Complete!')
     s = saving_path = saver.save(sess, model_path)
     print('model saving completed!')
-    # decoder_input_batch = ( h5f['decoder_input_batch'][:] - 223586273 )/ 122304694
-    # pseudo_decoder_target_batch = h5f['decoder_input_batch'][:]  # This is used for initialzation.
-    # decoder_target_batch = h5f['decoder_target_batch'][:]
-
 
 if Test_flag:
-    h5f = h5py.File('batch_data_h5py/201610_np', 'r')
+
+    h5f = h5py.File('batch_data_h5py/201611_np', 'r')
     batch_size_ = len(h5f['encoder_input_batch'][:])
     shuffled_batch_idx = np.arange(batch_size_)
     encoder_input_batch = h5f['encoder_input_batch'][:]
@@ -149,10 +196,9 @@ if Test_flag:
     h5f.close()
     # encoder input 은 위도, 경도, 거래년도, 거래월, 층, 면적, 거래가격, 건축년도, 예측년도, 예측월, 예측 층, 예측 면적. 순이다.
 
-
     np.random.shuffle(shuffled_batch_idx)
     lenX = encoder_length_vec[shuffled_batch_idx][:n_mini_batch_size]
-    encoder_prediction_ , summary = sess.run([encoder_result_tf,merged],
+    encoder_prediction_ , summary = sess.run([encoder_result_tf, training_loss],
                                                         feed_dict={X: encoder_input_batch[shuffled_batch_idx][
                                                                       :n_mini_batch_size]
                                                             , Y: encoder_target_batch[shuffled_batch_idx][
