@@ -8,7 +8,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 max_length = 50
 feature_number = 12
 
-Training_flag = True
+restore_session_flag = True
+Training_flag = False
 Test_flag = True
 learning_rate = 0.01
 n_hidden = 10
@@ -102,6 +103,14 @@ test_writer = tf.summary.FileWriter('result/hstest', sess.graph)
 sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()
 
+if restore_session_flag:
+    try:
+        print("successfully restored the previous session!")
+        saver.restore(sess, model_path)
+    except:
+        print("There is no stored model. I'm creating one at ->", model_path)
+
+
 if Training_flag:
 
     h5f = h5py.File('batch_data_h5py/201611_np', 'r')
@@ -162,8 +171,7 @@ if Test_flag:
     shuffled_batch_idx = np.arange(batch_size_)
     encoder_input_batch = h5f['encoder_input_batch'][:]
     encoder_length_vec = np.asarray(h5f['encoder_length_vector_batch'][:],dtype=np.int)
-    # encoder_target_batch = h5f['encoder_target_batch'][:]
-    encoder_target_batch = (h5f['encoder_target_batch'][:] - 223586273) / 122304694
+    encoder_target_batch = h5f['encoder_target_batch'][:]
     h5f.close()
     # encoder input 은 위도, 경도, 거래년도, 거래월, 층, 면적, 거래가격, 건축년도, 예측년도, 예측월, 예측 층, 예측 면적. 순이다.
 

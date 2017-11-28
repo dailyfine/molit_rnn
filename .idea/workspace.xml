@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6534421-8136-4d5a-8db6-d00f240d2625" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511164352.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511164751.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511888510.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511888608.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511888993.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511889680.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511889752.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511889819.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511889930.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511890095.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511890159.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511890269.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511890348.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511890500.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511890637.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511890757.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511164347.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511164746.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511888504.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511888604.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511888988.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511889675.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511889746.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511889814.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511889925.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511890090.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511890155.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511890265.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511890343.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511890495.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511890633.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511890752.hyunsuns-MacBook-Pro.local" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/model_test_.data-00000-of-00001" afterPath="$PROJECT_DIR$/tmp/model_test_.data-00000-of-00001" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/model_test_.index" afterPath="$PROJECT_DIR$/tmp/model_test_.index" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/model_test_.meta" afterPath="$PROJECT_DIR$/tmp/model_test_.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/predictor_norm.py" afterPath="$PROJECT_DIR$/src/predictor_norm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ggi_predictor.py" afterPath="$PROJECT_DIR$/src/ggi_predictor.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ggi_predictor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ggi_predictor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ggi_predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-205">
-              <caret line="155" column="17" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
+            <state relative-caret-position="262">
+              <caret line="161" column="33" lean-forward="true" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -69,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="predictor_norm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="predictor_norm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/predictor_norm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1072">
-              <caret line="185" column="13" lean-forward="true" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+            <state relative-caret-position="3381">
+              <caret line="199" column="67" lean-forward="false" selection-start-line="199" selection-start-column="67" selection-end-line="199" selection-end-column="67" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#698#1181#0" expanded="false" />
@@ -116,7 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>length</find>
       <find>seqqqqqq</find>
       <find>sess.run</find>
       <find>seq</find>
@@ -142,10 +105,11 @@
       <find>201602</find>
       <find>201601</find>
       <find>201610</find>
-      <find>201611</find>
       <find>optimizer</find>
       <find>training</find>
       <find>merged</find>
+      <find>201611</find>
+      <find>model_path</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -164,9 +128,9 @@
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/src/data_generator.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/ggi_predictor.py" />
         <option value="$PROJECT_DIR$/src/input_batch_normalizer.py" />
         <option value="$PROJECT_DIR$/src/predictor_norm.py" />
+        <option value="$PROJECT_DIR$/src/ggi_predictor.py" />
       </list>
     </option>
   </component>
@@ -212,12 +176,12 @@
             <path>
               <item name="price_rnn" type="b2602c69:ProjectViewProjectNode" />
               <item name="price_rnn" type="462c0819:PsiDirectoryNode" />
-              <item name="result" type="462c0819:PsiDirectoryNode" />
+              <item name="best_model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="price_rnn" type="b2602c69:ProjectViewProjectNode" />
               <item name="price_rnn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tmp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -337,9 +301,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53587115" sideWeight="0.12009804" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80966324" sideWeight="0.49673203" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.73475176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38014185" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.67943263" sideWeight="0.87990195" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.040849674" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17320262" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -626,23 +590,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ggi_predictor.py">
+    <entry file="file://$PROJECT_DIR$/src/predictor_norm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
-          <caret line="155" column="17" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
+        <state relative-caret-position="3381">
+          <caret line="199" column="67" lean-forward="false" selection-start-line="199" selection-start-column="67" selection-end-line="199" selection-end-column="67" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#698#1181#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/predictor_norm.py">
+    <entry file="file://$PROJECT_DIR$/best_model/checkpoint">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1072">
-          <caret line="185" column="13" lean-forward="true" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ggi_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="161" column="33" lean-forward="true" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#698#1181#0" expanded="false" />
           </folding>
         </state>
       </provider>
