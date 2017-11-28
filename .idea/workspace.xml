@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6534421-8136-4d5a-8db6-d00f240d2625" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511161849.hyunsuns-MacBook-Pro.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstest/events.out.tfevents.1511162222.hyunsuns-MacBook-Pro.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511161824.hyunsuns-MacBook-Pro.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/hstrain/events.out.tfevents.1511162217.hyunsuns-MacBook-Pro.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/recent_result.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/recent_result_25size.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/model_test_.data-00000-of-00001" afterPath="$PROJECT_DIR$/tmp/model_test_.data-00000-of-00001" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/model_test_.index" afterPath="$PROJECT_DIR$/tmp/model_test_.index" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/model_test_.meta" afterPath="$PROJECT_DIR$/tmp/model_test_.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_generator.py" afterPath="$PROJECT_DIR$/src/data_generator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ggi_predictor.py" afterPath="$PROJECT_DIR$/src/ggi_predictor.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,36 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_generator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data_generator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#173#656#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/preprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-              <folding>
-                <element signature="e#25#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ggi_predictor.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ggi_predictor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ggi_predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1028">
-              <caret line="120" column="53" lean-forward="false" selection-start-line="120" selection-start-column="53" selection-end-line="120" selection-end-column="53" />
+            <state relative-caret-position="151">
+              <caret line="139" column="48" lean-forward="true" selection-start-line="139" selection-start-column="48" selection-end-line="139" selection-end-column="48" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -59,32 +41,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme.txt">
+      <file leaf-file-name="input_batch_normalizer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/input_batch_normalizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="201709_molit.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_files/molit/201709_molit.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="10309" column="121" lean-forward="false" selection-start-line="10309" selection-start-column="0" selection-end-line="10309" selection-end-column="121" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pip_list.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pip_list.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="295">
+              <caret line="31" column="33" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#98#581#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,14 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mini_ba</find>
-      <find>random</find>
-      <find>(encoder_target_batch[shuffled_batch_idx][:n_mini_batch_size][i][lenX[i] - 1]) * 122304694 + 223586273</find>
-      <find>length_vec</find>
-      <find>encoder_length</find>
-      <find>np_length</find>
-      <find>Xpl</find>
-      <find>encoder_length_vec</find>
       <find>lenX =</find>
       <find>encode</find>
       <find>encoder_len</find>
@@ -130,6 +87,14 @@
       <find>loss</find>
       <find>cost_result</find>
       <find>merged</find>
+      <find>summary</find>
+      <find>import h5py\nimport numpy as np\n\nh5f \= h5py\.File\(\'batch_data_h5py\/201601_np\'\, \'r\'\)\nbatch_size_ \= len\(h5f\[\'encoder_input_batch\'\]\[\:\]\)\nshuffled_batch_idx \= np\.arange\(batch_size_\)\nencoder_input_batch \= h5f\[\'encoder_input_batch\'\]\[\:\]\nencoder_length_vec \= h5f\[\'encoder_length_vector_batch\'\]\[\:\]\nencoder_length_vec \= np\.asarray\(h5f\[\'encoder_length_vector_batch\'\]\[\:\]\, dtype\=np\.int\)\nencoder_target_batch \= \(h5f\[\'encoder_target_batch\'\]\[\:\] \- 223586273\) \/ 122304694\n\n\n\# encoder input 은 위도\, 경도\, 거래년도\, 거래월\, 층\, 면적\, 거래가격\, 건축년도\, 예측년도\, 예측월\, 예측 층\, 예측 면적\. 순이다\.\nfor i in range\(batch_size_\)\:\n    for j in range\(max_length\)\:\n        \# 201701년 기준으로 평균 및 표준 편차로 나누어줌\n        encoder_input_batch\[i\]\[j\]\[0\] \= \(encoder_input_batch\[i\]\[j\]\[0\] \- 36\.4367\) \/ 1\.0547  \# 위도\n        encoder_input_batch\[i\]\[j\]\[1\] \= \(encoder_input_batch\[i\]\[j\]\[1\] \- 127\.5861\) \/ 0\.8790  \# 경도\n        encoder_input_batch\[i\]\[j\]\[2\] \= \(encoder_input_batch\[i\]\[j\]\[2\] \- 2014\) \/ 2  \# 거래년도 2011 \- 2016 까지 평균 및 표준 편차\n        encoder_input_batch\[i\]\[j\]\[3\] \= \(encoder_input_batch\[i\]\[j\]\[3\] \- 6\.5\) \/ 3\.45  \# 거래월 2011 \- 2016 까지 평균\n        encoder_input_batch\[i\]\[j\]\[4\] \= \(encoder_input_batch\[i\]\[j\]\[4\] \- 8\.659\) \/ 5\.7851  \# 층\n        encoder_input_batch\[i\]\[j\]\[5\] \= \(encoder_input_batch\[i\]\[j\]\[4\] \- 72\.7554\) \/ 24\.3750  \# 면적\n        encoder_input_batch\[i\]\[j\]\[6\] \= \(encoder_input_batch\[i\]\[j\]\[6\] \- 223586273\) \/ 122304694  \# 거래가격\n        encoder_input_batch\[i\]\[j\]\[7\] \= \(encoder_input_batch\[i\]\[j\]\[7\] \- 2000\.1287\) \/ 8\.2695  \# 건축년도\n        encoder_input_batch\[i\]\[j\]\[8\] \= \(encoder_input_batch\[i\]\[j\]\[8\] \- 2014\) \/ 2  \# 예측년도 2011 \- 2016 까지 평균 및 표준 편차\n        encoder_input_batch\[i\]\[j\]\[9\] \= \(encoder_input_batch\[i\]\[j\]\[9\] \- 6\.5\) \/ 3\.45  \# 예측월 2011 \- 2016 까지 평균\n        encoder_input_batch\[i\]\[j\]\[10\] \= \(encoder_input_batch\[i\]\[j\]\[10\] \- 8\.659\) \/ 5\.7851  \# 예측 층\n        encoder_input_batch\[i\]\[j\]\[11\] \= \(encoder_input_batch\[i\]\[j\]\[11\] \- 72\.7554\) \/ 24\.3750  \# 면적\n\nh5f\[\'encoder_input_batch\'\]\[\:\] \= encoder_input_batch\nh5f\.close\(\)\n</find>
+      <find>max_length</find>
+      <find />
+      <find>h5f['encoder_target_batch']</find>
+      <find>Test</find>
+      <find>201601</find>
+      <find>201602</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -143,11 +108,12 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/encoder_batch_normalize.py" />
-        <option value="$PROJECT_DIR$/src/data_generator.py" />
         <option value="$PROJECT_DIR$/src/predictor.py" />
         <option value="$PROJECT_DIR$/src/preprocessing.py" />
         <option value="$PROJECT_DIR$/pip_list.txt" />
         <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/src/data_generator.py" />
+        <option value="$PROJECT_DIR$/src/input_batch_normalizer.py" />
         <option value="$PROJECT_DIR$/src/ggi_predictor.py" />
       </list>
     </option>
@@ -179,7 +145,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,24 +161,24 @@
             <path>
               <item name="price_rnn" type="b2602c69:ProjectViewProjectNode" />
               <item name="price_rnn" type="462c0819:PsiDirectoryNode" />
-              <item name="result" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="price_rnn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="price_rnn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/hyunsun/PycharmProjects/price_rnn/src/predictor.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/batch_data_h5py" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -311,15 +277,16 @@
     <frame x="7" y="22" width="1266" height="778" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19689542" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53587115" sideWeight="0.12009804" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80966324" sideWeight="0.49673203" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.83601755" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6691069" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50512445" sideWeight="0.87990195" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17320262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.87990195" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39970717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -328,7 +295,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -366,6 +332,116 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#173#656#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#25#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_files/molit/201709_molit.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309270">
+          <caret line="10309" column="121" lean-forward="false" selection-start-line="10309" selection-start-column="0" selection-end-line="10309" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pip_list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ggi_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="133" column="31" lean-forward="false" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#173#656#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#25#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_files/molit/201709_molit.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309270">
+          <caret line="10309" column="121" lean-forward="false" selection-start-line="10309" selection-start-column="0" selection-end-line="10309" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pip_list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ggi_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="133" column="31" lean-forward="true" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/data_generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -412,13 +488,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/encoder_batch_normalize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/encoder_batch_normalize.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -442,14 +512,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_generator.py">
+    <entry file="file://$PROJECT_DIR$/result/recent_result.txt" />
+    <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#173#656#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_files/molit/201709_molit.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="10309" column="121" lean-forward="false" selection-start-line="10309" selection-start-column="0" selection-end-line="10309" selection-end-column="121" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -461,25 +537,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_files/molit/201709_molit.csv">
+    <entry file="file://$PROJECT_DIR$/src/data_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="10309" column="121" lean-forward="false" selection-start-line="10309" selection-start-column="0" selection-end-line="10309" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-102">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#173#656#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="-2665">
           <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding>
             <element signature="e#25#44#0" expanded="true" />
@@ -489,10 +560,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ggi_predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1028">
-          <caret line="120" column="53" lean-forward="false" selection-start-line="120" selection-start-column="53" selection-end-line="120" selection-end-column="53" />
+        <state relative-caret-position="151">
+          <caret line="139" column="48" lean-forward="true" selection-start-line="139" selection-start-column="48" selection-end-line="139" selection-end-column="48" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/input_batch_normalizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="31" column="33" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#98#581#0" expanded="false" />
           </folding>
         </state>
       </provider>

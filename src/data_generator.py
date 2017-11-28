@@ -57,7 +57,6 @@ def make_batch(encoder_input, encoder_output):
     return np.asarray(encoder_input_batch), np.asarray(encoder_target_batch)
 
 
-
 def writeh5py(timecode):
     print(range(len(timecode)))
     for i in range(len(timecode)):
