@@ -8,6 +8,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 max_length = 50
 feature_number = 12
 
+which_epoch_to_restore = 10
+restore_session_flag = True
 Training_flag = True
 Test_flag = True
 learning_rate = 0.01
@@ -15,7 +17,7 @@ n_hidden = 10
 n_hidden2 = 128
 n_hidden3 = 128
 
-n_epoch = 500
+n_epoch = 100
 n_input = feature_number
 n_mini_batch_size = 25
 n_decoder_input_feature = 10
@@ -126,6 +128,14 @@ test_writer = tf.summary.FileWriter('result/hstest', sess.graph)
 sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()
 
+if restore_session_flag:
+    try:
+        print("successfully restored the previous session!")
+        saver.restore(sess, model_path+str("_50"))
+    except:
+        print("There is no stored model. I'm creating one at ->", model_path)
+
+
 training_data = timecode_generator('201601', '201604')
 validation_data = timecode_generator('201610', '201612')
 
@@ -134,6 +144,11 @@ if Training_flag:
 
     for epoch in range(n_epoch):
         # random 하게, 시간을 고른다.
+
+        if epoch % 100 == 0:
+            s = saving_path = saver.save(sess, model_path+"_"+str(epoch))
+            print('At epoch #'+str(epoch)+', model saving completed!')
+
         tr_randint = np.random.randint(0, len(training_data))
         h5f = h5py.File('batch_data_h5py/'+training_data[tr_randint]+'_np', 'r')
 
@@ -154,7 +169,7 @@ if Training_flag:
                                ,lenXpl: np_lenX
                              }
                            )
-        print('Epoch: ', '%04d' % (epoch + 1), 'training loss =', '{:.6f}'.format(loss))
+        # print('Epoch: ', '%04d' % (epoch + 1), 'training loss =', '{:.6f}'.format(loss))
         train_writer.add_summary(tr_summary, epoch)
 
         # Validation ======================================================================
@@ -178,12 +193,11 @@ if Training_flag:
                                ,lenXpl: np_lenX
                              }
                            )
-        print('Epoch:', '%04d' % (epoch + 1), 'validation loss =', '{:.6f}'.format(loss))
+        # print('Epoch:', '%04d' % (epoch + 1), 'validation loss =', '{:.6f}'.format(loss))
         train_writer.add_summary(val_summary, epoch)
 
     print('Optimization Complete!')
-    s = saving_path = saver.save(sess, model_path)
-    print('model saving completed!')
+
 
 if Test_flag:
 
